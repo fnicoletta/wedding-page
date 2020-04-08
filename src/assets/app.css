@@ -1,0 +1,25 @@
+.elegant-font {
+	font-family: Vladimir Script;
+}
+
+.corsiva-font {
+	font-family: Monotype Corsiva;
+}
+
+.font-header {
+	font-size: 6em;
+}
+
+.max-content {
+	width: 50%;
+	height: max-content;
+}
+
+.clickable {
+	transition: 0.5s;
+}
+
+.clickable:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
