@@ -1,23 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 	return (
-		<nav className="leading-tight flex justify-around text-xl corsiva-font">
-			<a href="#info" className="clickable">
+		<nav className="static z-50 leading-tight flex justify-around text-xl corsiva-font bg-transparent">
+			<Link to="/" className="clickable">
 				Wedding Info
-			</a>
-			<a href="#rsvp" className="clickable">
+			</Link>
+			<Link to="/rsvp" className="clickable">
 				RSVP
-			</a>
-			<a href="#registry" className="clickable">
+			</Link>
+			<Link to="/registry" className="clickable">
 				Registry
-			</a>
-			<a href="#photos" className="clickable">
+			</Link>
+			<Link to="/photos" className="clickable">
 				Photos
-			</a>
-			<a href="#story" className="clickable">
+			</Link>
+			<Link to="/our-story" className="clickable">
 				Our Story
-			</a>
+			</Link>
 		</nav>
 	)
 }

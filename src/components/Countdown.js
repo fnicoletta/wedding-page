@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react'
 
-const Countdown = ({ date }) => {
+const Countdown = ({
+	date,
+	header,
+	subheader,
+	finishedMessage,
+	countdownMessage,
+}) => {
 	const calculateTimeLeft = () => {
 		const difference = +new Date(date) - +new Date()
 		let timeLeft = {}
 
 		if (difference > 0) {
-			timeLeft = {
-				Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-				Hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-				Minutes: Math.floor((difference / (1000 * 60)) % 60),
-				// Seconds: Math.floor((difference / 1000) % 60),
-			}
+			timeLeft = [
+				Math.floor(difference / (1000 * 60 * 60 * 24)),
+				Math.floor((difference / (1000 * 60 * 60)) % 24),
+				Math.floor((difference / (1000 * 60)) % 60),
+				Math.floor((difference / 1000) % 60),
+			]
 		}
 		return timeLeft
 	}
@@ -19,45 +25,28 @@ const Countdown = ({ date }) => {
 	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
 
 	useEffect(() => {
-		setTimeout(() => {
+		const countdown = setTimeout(() => {
 			setTimeLeft(calculateTimeLeft())
 		}, 1000)
-	})
-
-	const timerComponents = []
-
-	Object.keys(timeLeft).forEach((interval) => {
-		if (!timeLeft[interval]) {
-			return
-		}
-
-		const keyGen = Math.random()
-
-		timerComponents.push(
-			<span key={keyGen} className="">
-				{timeLeft[interval]} {interval}{' '}
-			</span>
-		)
+		return () => clearTimeout(countdown)
 	})
 
 	return (
-		<div className="">
+		<div className="mt-3">
 			<h1 className="font-header text-center elegant-font leading-tight">
-				Franky & Megan
+				{header}
 			</h1>
 			<h2 className="text-center elegant-font text-5xl leading-tight">
-				August 21, 2021
+				{subheader}
 			</h2>
 			<div>
-				{timerComponents.length ? (
-					<div className="text-center elegant-font text-3xl">
-						{timerComponents} until I do!
-					</div>
-				) : (
-					<span className="text-6xl text-center text-white font-serif">
-						Today's the day!
+				<div className="text-center elegant-font text-3xl">
+					<span>
+						{timeLeft[0]} Days, {timeLeft[1]} Hours, {timeLeft[2]} Minutes
+						and {timeLeft[3]} Seconds {countdownMessage}
 					</span>
-				)}
+				</div>
+				)
 			</div>
 		</div>
 	)
