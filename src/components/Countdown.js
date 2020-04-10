@@ -46,7 +46,6 @@ const Countdown = ({
 						and {timeLeft[3]} Seconds {countdownMessage}
 					</span>
 				</div>
-				)
 			</div>
 		</div>
 	)
