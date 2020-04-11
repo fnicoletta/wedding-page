@@ -30,6 +30,7 @@ const StyledMenu = styled.nav`
 	top: 0;
 	left: 0;
 	transition: transform 400ms ease-in-out;
+	z-index: 10;
 `
 
 const Menu = ({ open }) => {

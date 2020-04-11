@@ -3,18 +3,14 @@ import styled from 'styled-components'
 
 const StyledMain = styled.main`
 	display: ${({ show }) => (show ? 'block' : 'none')};
+	margin-top: 2rem;
 
 	span {
 		float: right;
 		cursor: pointer;
 	}
 
-	label {
-		margin: 1rem;
-	}
-
 	input {
-		margin: 1rem 0;
 		border: 0.01rem solid orangered;
 	}
 
@@ -24,25 +20,27 @@ const StyledMain = styled.main`
 `
 
 const StyledButton = styled.button`
-	border: 0.1rem solid cornsilk;
+	border: 0.22rem solid cornsilk;
 	background: transparent;
 	padding: 0.5rem 1rem;
 	border-radius: 25px;
 	transition: 0.5s;
 	color: cornsilk;
+	font-weight: bold;
 
 	:hover {
 		background: cornsilk;
-		color: darkred;
+		color: indianred;
 	}
 `
 
 const StyledContainer = styled.div`
 	height: max-content;
-	width: 26rem;
+	width: max-content;
 	margin: auto;
 	border: 0.3rem solid darkred;
 	border-radius: 10px;
+	box-shadow: 3px 3px 5px 6px maroon;
 	background: indianred;
 	color: black;
 	padding: 0.6rem 1rem;
@@ -67,7 +65,7 @@ const Modal = (props) => {
 			<StyledContainer>
 				<span onClick={closeModal}>X</span>
 				<form>
-					<label htmlFor="name">Name:</label>
+					<label htmlFor="name">Name</label>
 					<input type="text" id="name" required />
 					<br />
 					<input
@@ -78,7 +76,8 @@ const Modal = (props) => {
 					/>
 					<label htmlFor="plus-one">Plus One</label>
 					<StyledPlusOne plusOne={plusOne}>
-						<label htmlFor="name-plus-one">Name:</label>
+						<label htmlFor="name-plus-one">Name</label>
+						<br />
 						<input type="text" id="name-plus-one" />
 					</StyledPlusOne>
 					<br />
