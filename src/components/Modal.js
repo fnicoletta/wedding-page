@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledMain = styled.main`
-	display: ${({ show }) => (show ? 'block' : 'none')};
+	display: ${({ show }) => (show ? 'flex' : 'none')};
 	margin-top: 2rem;
 
 	span {
@@ -20,8 +20,8 @@ const StyledMain = styled.main`
 `
 
 const StyledButton = styled.button`
-	border: 0.22rem solid cornsilk;
-	background: transparent;
+	border: 0.22rem solid #cd5c5c;
+	background: #cd5c5c;
 	padding: 0.5rem 1rem;
 	border-radius: 25px;
 	transition: 0.5s;
@@ -30,18 +30,18 @@ const StyledButton = styled.button`
 
 	:hover {
 		background: cornsilk;
-		color: indianred;
+		color: #cd5c5c;
 	}
 `
 
 const StyledContainer = styled.div`
 	height: max-content;
-	width: max-content;
+	width: auto;
 	margin: auto;
-	border: 0.3rem solid darkred;
+	border: 0.3rem solid #e19d9d;
 	border-radius: 10px;
 	box-shadow: 3px 3px 5px 6px maroon;
-	background: indianred;
+	background: #e19d9d;
 	color: black;
 	padding: 0.6rem 1rem;
 	font-family: Monotype Corsiva;

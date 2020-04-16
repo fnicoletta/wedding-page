@@ -4,8 +4,8 @@ import styled, { keyframes } from 'styled-components'
 
 const StyledMain = styled.main`
 	height: 100vh;
-	width: 100%;
-	background: papayawhip;
+	width: 100vw;
+	background: #fffaf2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -18,9 +18,10 @@ const StyledText = styled.div`
 	background: darkred;
 	min-height: 30rem;
 	height: max-content;
+	width: max-content;
 	text-align: center;
 	font-family: Monotype Corsiva;
-	color: papayawhip;
+	color: #fffaf2;
 	font-size: 2.5rem;
 	display: flex;
 	flex-direction: column;
